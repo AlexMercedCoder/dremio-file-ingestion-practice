@@ -1,3 +1,9 @@
+## Datasets
+
+- CSV & JSON datasets create with Mockaroo
+
+- [Flights Dataset](https://www.kaggle.com/datasets/chiyucheng/flight-parquet?resource=download) Downloaded from Kaggle
+
 ## Environment Setup
 
 Before spinning environment, place any desired sample data in the sample data folder.
