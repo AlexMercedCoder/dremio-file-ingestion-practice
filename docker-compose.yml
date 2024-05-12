@@ -6,7 +6,7 @@ services:
     image: projectnessie/nessie:latest
     container_name: catalog
     networks:
-      sql-analyst-101:
+      dremio-file-ingestion:
     ports:
       - 19120:19120
 
@@ -21,7 +21,7 @@ services:
       - MINIO_REGION_NAME=us-east-1
       - MINIO_REGION=us-east-1
     networks:
-      sql-analyst-101:
+      dremio-file-ingestion:
     ports:
       - 9001:9001
       - 9000:9000
@@ -48,7 +48,7 @@ services:
       mc cp /tmp/data/* minio/sampledata/ &&
       echo 'Buckets created and data loaded.'"
     networks:
-      sql-analyst-101:
+      dremio-file-ingestion:
 
   # Dremio
   dremio:
@@ -64,7 +64,7 @@ services:
     depends_on:
       - minio-setup
     networks:
-      sql-analyst-101:
+      dremio-file-ingestion:
 
 networks:
-  sql-analyst-101:
+  dremio-file-ingestion:
