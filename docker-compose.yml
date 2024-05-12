@@ -65,6 +65,14 @@ services:
       - minio-setup
     networks:
       dremio-file-ingestion:
+  #Superset
+  superset:
+    image: alexmerced/dremio-superset
+    container_name: superset
+    networks:
+      dremio-file-ingestion:
+    ports:
+      - 8088:8088
 
 networks:
   dremio-file-ingestion:
